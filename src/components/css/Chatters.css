@@ -1,0 +1,171 @@
+.chatters {
+    display: flex;
+    flex: .25;
+    align-items: center;
+    flex-direction: column;
+    background: black;
+    height: 100vh;
+    max-width: 250px;
+    min-width: 200px;
+    position: relative;
+    z-index: 500;
+    transition: all ease-in-out .2s;
+}
+
+.header__menu {
+    position: absolute;
+    right: -45px;
+    top: 60px;
+    margin: 10px;
+    cursor: pointer;
+    z-index: 300;
+}
+
+.header__menu div {
+    display: none;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: black;
+    border-radius: 3px;
+    transform-origin: 4px 2px;
+    transition: all 0.3s ease-in;
+}
+
+.active div:first-child {
+    transform: rotate(45deg);
+}
+
+.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.active div:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+.chatters__logo {
+    color: white;
+    font-family: sans-serif;
+    font-style: italic;
+}
+
+.chatters__list {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 100%;
+    overflow: overlay;
+}
+
+
+
+.chatters__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatters__form input {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+}
+
+.chatters__form button {
+    display: none;
+    max-width: 60px;
+}
+
+.chatters__search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+} 
+
+.chatters__searchList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+}
+
+.chatters__searchList li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 0;
+    width: 100%;
+    transition: all ease-in-out .2s;
+}
+
+.chatters__searchList li:hover {
+    background-color: azure;
+    cursor: pointer;
+    color: black;
+}
+
+.chatter__img {
+    margin-right: 5px;
+}
+
+.chatters__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    transition: all ease-in-out .2s;
+    text-decoration: none;
+    color: white;
+}
+
+.chatters__item:hover {
+    background: white;
+    color: black;
+
+}
+
+.chatters__item p {
+    display: flex;
+    flex-direction: column;
+}
+
+.chatters__item p > span {
+    font-size: x-small;
+}
+
+.chatters__name {
+    margin-right: 10px;
+}
+
+.chatters__delete {
+    color: red;
+}
+
+.chatters__RoomActive {
+    background-color: white;
+    color: black;
+}
+
+@media only screen and (max-width: 500px) {
+    .chatters {
+        width: 250px;
+        position: fixed;
+        left: -250px;
+    }
+
+    .header__menu div {
+        display: block;
+    }
+
+    .chatters__open {
+        left: 0;
+    }
+}

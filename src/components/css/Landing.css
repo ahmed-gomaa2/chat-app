@@ -1,0 +1,58 @@
+.landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background: black;
+}
+
+.landing__logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+
+.landing__icon {
+    color: deepskyblue;
+    margin-right: 10px;
+}
+
+.landing__logo h1 {
+    color: white;
+    font-style: italic;
+}
+
+.landing__links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.landing__links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    background: aqua;
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+    transition: all ease-in-out .2s;
+}
+
+.landing__links:hover a{
+    background: deepskyblue;
+    color: white;
+}
+
+.fa-google {
+    color: white !important;
+}

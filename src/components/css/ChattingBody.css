@@ -1,0 +1,100 @@
+.chattingBody {
+    display: flex;
+    flex-direction: column;
+    flex: .75;
+    min-width: calc(100vw - 200px);
+    background: aqua;
+    position: relative;
+    height: 100vh;
+}
+
+.chattingBody__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 5px;
+    border-bottom: 1px black solid;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .7);
+}
+
+.chattingBody__logout {
+    cursor: pointer;
+    color: red;
+    transition: color ease-in-out .2s;
+}
+
+.chattingBody__logout:hover {
+    color: black;
+}
+
+.chattingBody__form {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    /* position: absolute; */
+    bottom: 0;
+}
+
+.chattingBody__form input {
+    display: flex;
+    flex: 1;
+    height: 30px;
+    border: none;
+    outline: none;
+}
+
+.chattingBody__form button {
+    height: 100%;
+    width: 70px;
+    cursor: pointer;
+    background-color: yellowgreen;
+    border: none;
+    outline: none;
+}
+
+.chattingBody__messages {
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    /* flex-direction: column-reverse; */
+}
+
+.chattingBody__message {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.chattingBody__messageBody {
+    font-style: italic;
+}
+
+.chattingBody__messageTimestamp {
+    font-size: x-small;
+    color: teal;
+}
+
+.chattingBody__owner {
+    margin-left: auto;
+    background-color: green;
+    color: white;
+}
+
+.chattingBody__messageTimestampOwner {
+    color: greenyellow;
+}
+
+@media only screen and (max-width: 500px) {
+    .chattingBody {
+        flex: 1;
+        width: 100%;
+    }
+}
