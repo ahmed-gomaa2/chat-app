@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import './App.css';
-import Chatters from "./components/Chatters";
 import Landing from "./components/Landing";
 import {Route, BrowserRouter} from "react-router-dom";
 import {connect} from 'react-redux';
@@ -22,7 +21,6 @@ const App = (props) => {
 };
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
         user: state.firebase.auth,
     }

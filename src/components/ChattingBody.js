@@ -8,26 +8,17 @@ import FlipMove from 'react-flip-move';
 
 const ChattingBody = (props, ref) => {
     const {roomId} = useParams();
-    const [roomName, setRoomName] = React.useState('');
     const [messageValue, setMessageValue] = React.useState('');
     const [messages, setMessages] = React.useState([]);
-
-    React.useEffect(() => {
-        // messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }, [])
  
     React.useEffect(() => {
         if(roomId) {
-            console.log(roomId)
             const db = firebase.firestore();
-            console.log(db)
             db.collection('users').doc(props.currentUser.uid).collection('chatRooms').doc(roomId).collection('messages').orderBy('timestamp','asc').onSnapshot(snapshot => {
                 setMessages(snapshot.docs.map(doc => doc.data()))
             })
         }
     }, [roomId])
-
-    console.log(messages)
 
     const sendNewMessage = (e) => {
         e.preventDefault();

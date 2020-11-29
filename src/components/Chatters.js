@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import './css/Chatters.css';
-import {DeleteOutlined, OpenInNewRounded} from "@material-ui/icons";
+import {DeleteOutlined} from "@material-ui/icons";
 import {connect} from 'react-redux';
 import {compose} from "redux";
 import {firestoreConnect} from "react-redux-firebase";
@@ -8,7 +8,6 @@ import * as actions from '../actions';
 import ChattersListItem from './ChattersListItem';
 import firebase from '../config/firebase';
 import {NavLink} from 'react-router-dom';
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 const Chatters = (props) => {
     const [searchResult, setSearchResult] = React.useState([]);
@@ -73,8 +72,6 @@ const Chatters = (props) => {
                         const currentUser = props.users.filter(user => {
                             return user.uid === props.currentUser
                         })
-                        console.log(currentUser);
-
                         return <ChattersListItem clearSearchInput={clearSearchInput} clearList={clearList} currentUser={currentUser[0]} otherUser={result} />
                         
                     })}</ul>
@@ -91,7 +88,6 @@ const Chatters = (props) => {
 };
 
 const mapStateToProps = state => {
-    console.log(state)
     return {
         users: state.firestore.ordered.users,
         currentUser: state.firebase.auth.uid

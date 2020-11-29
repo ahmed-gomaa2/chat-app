@@ -6,7 +6,6 @@ import {Avatar} from '@material-ui/core';
 import firebase from '../config/firebase';
 
 const ChattersListItem = (props) => {
-
     const createNewRoom = () => {
         const currentUser = props.currentUser;
         const otherUser = props.otherUser;
@@ -14,7 +13,6 @@ const ChattersListItem = (props) => {
         const friend = db.collection('users').doc(currentUser.id).collection('chatRooms').doc(otherUser.uid).get()
         .then(doc => {
             if(doc.exists) {
-                console.log('exists')
                 props.clearSearchInput();
             }else {
                 props.createChatRoom(currentUser, otherUser);
